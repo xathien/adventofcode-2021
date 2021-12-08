@@ -1,7 +1,5 @@
 require "set"
 
-count = 0
-desired_sizes = [2,3,4,7]
 patterns = {
   [1, 1, 1, 0, 1, 1, 1] => 0,
   [0, 0, 1, 0, 0, 1, 0] => 1,
@@ -14,10 +12,6 @@ patterns = {
   [1, 1, 1, 1, 1, 1, 1] => 8,
   [1, 1, 1, 1, 0, 1, 1] => 9,
 }
-
-def letter_to_num(letter)
-
-end
 
 total_sum = File.readlines('input')
     .reduce(0) do |sum, line|
