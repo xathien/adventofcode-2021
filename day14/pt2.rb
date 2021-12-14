@@ -23,7 +23,6 @@ def recurse(left, right, iterations_left)
   pair = left + right
   memo = @memo.dig(pair, iterations_left)
   unless memo.empty?
-    @memo_skip_count += 2**iterations_left
     return memo
   end
 
@@ -64,8 +63,6 @@ polymer.take(polymer.size - 1).each_with_index { |left, index|
 @instances[polymer.last] += 1
 
 pp "Total counts: #{@instances}"
-
-pp "Skipped iterations: #{@memo_skip_count}"
 
 sorted_instances = @instances.values.sort
 pp "Diff: #{sorted_instances.last - sorted_instances.first}"
