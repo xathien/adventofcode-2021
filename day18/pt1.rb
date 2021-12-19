@@ -113,6 +113,8 @@ class Node
 
       if !current.left_index.nil? && index <= current.left_index
         current = current.left
+      elsif index > current.right_index
+        return nil
       else
         current = current.right
       end
